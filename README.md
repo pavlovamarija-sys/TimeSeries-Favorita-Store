@@ -102,6 +102,10 @@ Features:
 * dynamic filtering by date 
 * comparison of external drivers with sales patterns
 
+Interactive visualization of the time series and external drivers.
+
+![Dashboard](Images/streamlit_dashboard.png)
+
 ### Project Files
 
 Important project files:
