@@ -1,8 +1,10 @@
 # 📈 Time Series Forecasting – Favorita Store
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
-![License](https://img.shields.io/badge/License-MIT-green)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live_App_Demo-red?logo=streamlit)](https://pavlovamarija-sys-timeseries-favorita-store-appapp-ho3sqq.streamlit.app/)
+
+Interactive visualization of the time series and external drivers.
+
+![Dashboard](Images/streamlit_dashboard.png)
 
 Time series forecasting project using statistical and machine learning models with external data sources (weather, holidays, macroeconomic indicators) and an interactive Streamlit dashboard.
 
@@ -101,10 +103,6 @@ Features:
 * overlay of weather, holiday, and macroeconomic variables 
 * dynamic filtering by date 
 * comparison of external drivers with sales patterns
-
-Interactive visualization of the time series and external drivers.
-
-![Dashboard](Images/streamlit_dashboard.png)
 
 ### Project Files
 
