@@ -17,3 +17,5 @@ mlruns/
 # System files
 .DS_Store
 Thumbs.db
+
+week_02/feature_engineering_methods.ipynb
