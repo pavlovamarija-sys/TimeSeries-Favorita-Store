@@ -122,13 +122,17 @@ Model development notebooks:
 Clone the repository:
 
 git clone https://github.com/pavlovamarija-sys/TimeSeries-Favorita-Store.git
+
 cd TimeSeries-Favorita-Store
 
 Install dependencies:
+
 pip install -r requirements.txt
 
 Run the Streamlit dashboard:
+
 cd App
+
 streamlit run app.py
 
 ### Project Structure
