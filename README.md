@@ -2,32 +2,50 @@
 
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Live_App_Demo-red?logo=streamlit)](https://pavlovamarija-sys-timeseries-favorita-store-appapp-ho3sqq.streamlit.app/)
 
-Time series forecasting project using statistical and machine learning models with external data sources (weather, holidays, macroeconomic indicators) and an interactive Streamlit dashboard.
+Time series forecasting project combining statistical models, machine learning models, and external data sources to analyze and predict retail sales.
+The project includes an interactive Streamlit dashboard for exploring demand patterns and forecasting results.
 
 ### Project Overview
 
-This project analyzes daily retail sales data and builds forecasting models to understand demand patterns.
-The analysis integrates multiple external data sources, including weather conditions, holidays, macroeconomic indicators, and oil prices, to evaluate their influence on sales behavior.
+This project analyzes daily retail sales data to understand demand patterns and improve forecasting accuracy.
 
-The project includes:
+The analysis integrates several external drivers that may influence retail demand, including:
+
+* weather conditions
+* holidays
+* macroeconomic indicators
+* oil prices
+
+The workflow includes:
 
 * exploratory time series analysis 
 * feature engineering 
 * statistical forecasting models 
 * machine learning models 
-* an interactive Streamlit dashboard for visualization.
+* hyperparameter tuning 
+* an interactive Streamlit dashboard for visualization
+
+The final selected model is a tuned Random Forest model, while statistical models such as SARIMA are included for comparison.
 
 ### Data Sources
 
 The dataset combines several sources:
 
-* Retail sales data – daily unit sales 
-* Weather data (NASA POWER API) – solar radiation, temperature, precipitation 
-* Holiday data – national and local holidays 
-* Macroeconomic indicators – consumer price index and minimum wage 
-* Oil prices – global oil price index
+#### Retail sales data 
+* daily unit sales
 
-These datasets were merged to create a unified daily time series dataset.
+#### Weather data (NASA POWER API)
+* solar radiation
+* temperature
+* precipitation
+
+#### Holiday data
+* national and local holidays 
+#### Macroeconomic indicators
+* consumer price index
+* minimum wage 
+#### Oil prices
+* global oil price index
 
 ### Feature Engineering
 
@@ -35,7 +53,9 @@ Several features were created to capture temporal structure and external drivers
 
 #### Lag features
 
-* lag_1, lag_7, lag_14
+* lag_1
+* lag_7
+* lag_14
 
 #### Rolling statistics
 
@@ -53,6 +73,9 @@ Several features were created to capture temporal structure and external drivers
 * weather indicators (is_sunny, is_rainy) 
 * oil price 
 * holiday indicators
+* macroeconomic variables (CPI, minimum wage)
+
+These features allow machine learning models to capture short-term dynamics and weekly seasonality.
 
 ### Models Implemented
 #### Statistical Time Series Models
@@ -70,94 +93,109 @@ Several features were created to capture temporal structure and external drivers
 * Random Forest 
 * XGBoost
 
+Hyperparameter tuning was performed using Hyperopt, and experiments were tracked with MLflow.
+
 ### Results Summary
 
-Models incorporating trend and weekly seasonality performed best.
+Models capturing trend and weekly seasonality produced the best forecasts.
 
-| Model         | RMSE |
-|---------------| ---- |
-| Prophet       | ~150 |
-| ETS           | ~150 |
-| SARIMA        | ~151 |
-| Linear Regression | ~147 |
-| Random Forest | ~152 |
-| XGBoost       | ~162 |
+Machine learning models improved performance when lag features and external variables were included.
+
+| Model                 | RMSE |
+| --------------------- | ---- |
+| Naive baseline        | ~173 |
+| Random Forest (tuned) | ~127 |
+| SARIMA                | ~108 |
+
 
 #### Key insight:
 
-* The time series exhibits strong weekly seasonality 
-* Seasonal statistical models perform best 
-* Machine learning models become competitive when lag features are included
+* The time series shows strong weekly seasonality 
+* Lag features significantly improve machine learning models 
+* External variables provide additional explanatory power 
+* Random Forest performed best overall when combining engineered features and external drivers
 
 ## Streamlit Interactive Dashboard
 
 An interactive dashboard was built using Streamlit to explore the dataset.
 
-Features:
+Features include:
 
 * interactive time series visualization 
 * overlay of weather, holiday, and macroeconomic variables 
 * dynamic filtering by date 
-* comparison of external drivers with sales patterns
+* forecast comparison between models 
+* display of model evaluation metrics
 
 ### Project Files
 
 Important project files:
 
-- Streamlit dashboard → [App/app.py](App/app.py)
-- Cleaned dataset → [Data/cleaned_timeseries.csv](Data/cleaned_timeseries.csv)
+### Streamlit Application
 
-Model development notebooks:
+- Main dashboard  
+  [App/app.py](App/app.py)
 
-- Statistical models → [week_02](week_02)
-- Machine learning models → [week_03](week_03)
-- Hyperparameter tuning → [week_04](week_04)
+- Streamlit pages  
+  [App/pages](App/pages)
+
+### Dataset
+
+- Cleaned time series dataset  
+  [Data/cleaned_timeseries.csv](Data/cleaned_timeseries.csv)
+
+### Analysis Notebooks
+
+- Exploratory Data Analysis  
+  [notebooks/EDA.ipynb](notebooks/EDA.ipynb)
+
+- Statistical forecasting models  
+  [notebooks/statistical_models.ipynb](notebooks/statistical_models.ipynb)
 
 ### Running the Project
 
-Clone the repository:
+#### Clone the repository:
 
 git clone https://github.com/pavlovamarija-sys/TimeSeries-Favorita-Store.git
 
 cd TimeSeries-Favorita-Store
 
-Install dependencies:
+#### Install dependencies:
 
 pip install -r requirements.txt
 
 Run the Streamlit dashboard:
 
-cd App
+streamlit run App/app.py
 
 streamlit run app.py
 
 ### Project Structure
 
-TimeSeries
+TimeSeries-Favorita-Store
 │
-├── App
-│   └── app.py                # Streamlit dashboard
+├── App                     # Streamlit dashboard
+│   ├── app.py
+│   └── pages
 │
-├── Data                      # Cleaned datasets
-├── models                    # Saved models
+├── Data                    # Cleaned dataset
 │
-├── week_01
-├── week_02
-├── week_03
-├── week_04                   # Development notebooks
+├── models                  # Saved models and evaluation results
+│
+├── notebooks               # Analysis and model development
 │
 ├── requirements.txt
-├── main.py
 └── README.md
 
 ### Technologies Used
+
 * Python 
 * Pandas 
 * Scikit-learn 
-* XGBoost 
 * Statsmodels 
-* Prophet 
 * Darts 
+* Hyperopt 
+* MLflow 
 * Matplotlib 
 * Streamlit
 
