@@ -2,10 +2,6 @@
 
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Live_App_Demo-red?logo=streamlit)](https://pavlovamarija-sys-timeseries-favorita-store-appapp-ho3sqq.streamlit.app/)
 
-Interactive visualization of the time series and external drivers.
-
-![Dashboard](Images/streamlit_dashboard.png)
-
 Time series forecasting project using statistical and machine learning models with external data sources (weather, holidays, macroeconomic indicators) and an interactive Streamlit dashboard.
 
 ### Project Overview
