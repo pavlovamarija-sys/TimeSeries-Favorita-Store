@@ -168,7 +168,7 @@ Important project files:
   [notebooks/tuned_comparison.ipynb](notebooks/tuned_comparison.ipynb)
 
 - Hyperparameter tuning with MLflow  
-  [notebooks/week3_hyperopt_mlflow.ipynb](notebooks/week3_hyperopt_mlflow.ipynb)
+  [notebooks/hyperopt_mlflow.ipynb](notebooks/hyperopt_mlflow.ipynb)
 
 ### Running the Project
 
