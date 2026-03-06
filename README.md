@@ -152,8 +152,23 @@ Important project files:
 - Exploratory Data Analysis  
   [notebooks/EDA.ipynb](notebooks/EDA.ipynb)
 
+- Baseline model comparison  
+  [notebooks/baseline_comparison.ipynb](notebooks/baseline_comparison.ipynb)
+
+- Feature engineering methods  
+  [notebooks/feature_engineering_methods.ipynb](notebooks/feature_engineering_methods.ipynb)
+
+- Machine learning feature engineering  
+  [notebooks/feature_engineering_models.ipynb](notebooks/feature_engineering_models.ipynb)
+
 - Statistical forecasting models  
   [notebooks/statistical_models.ipynb](notebooks/statistical_models.ipynb)
+
+- Tuned model comparison  
+  [notebooks/tuned_comparison.ipynb](notebooks/tuned_comparison.ipynb)
+
+- Hyperparameter tuning with MLflow  
+  [notebooks/week3_hyperopt_mlflow.ipynb](notebooks/week3_hyperopt_mlflow.ipynb)
 
 ### Running the Project
 
