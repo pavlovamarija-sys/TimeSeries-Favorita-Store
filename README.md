@@ -1,6 +1,6 @@
 # 📈 Time Series Forecasting – Favorita Store
 
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live_App_Demo-red?logo=streamlit)](https://pavlovamarija-sys-timeseries-favorita-store-appapp-ho3sqq.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pavlovamarija-sys-timeseries-favorita-store-appapp-ho3sqq.streamlit.app/)
 
 Time series forecasting project combining statistical models, machine learning models, and external data sources to analyze and predict retail sales.
 The project includes an interactive Streamlit dashboard for exploring demand patterns and forecasting results.
@@ -132,6 +132,9 @@ Features include:
 Important project files:
 
 ### Streamlit Application
+
+- Live dashboard  
+  [Open Streamlit App](https://pavlovamarija-sys-timeseries-favorita-store-appapp-ho3sqq.streamlit.app/)
 
 - Main dashboard  
   [App/app.py](App/app.py)
