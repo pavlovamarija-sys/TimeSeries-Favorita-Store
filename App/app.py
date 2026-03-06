@@ -437,8 +437,34 @@ with right:
                     "SARIMA forecast is loaded from the statistical model notebook and shown for visual comparison only.")
 
                 m5, m6 = st.columns(2)
-                m5.metric("MAE (SARIMA)", f"{mae_sar:.2f}")
-                m6.metric("RMSE (SARIMA)", f"{rmse_sar:.2f}")
+                # SARIMA metrics (if available)
+                if "sarima_forecast" in test_df.columns:
+                    valid = pd.notna(test_df["sarima_forecast"])
+
+                    if valid.any():
+                        st.info(
+                            "SARIMA forecast is loaded from the statistical model notebook and shown for visual comparison only."
+                        )
+
+                        # --- compute metrics ---
+                        from sklearn.metrics import mean_absolute_error, mean_squared_error
+                        import numpy as np
+
+                        mae_sar = mean_absolute_error(
+                            test_df.loc[valid, "unit_sales"],
+                            test_df.loc[valid, "sarima_forecast"]
+                        )
+
+                        rmse_sar = np.sqrt(
+                            mean_squared_error(
+                                test_df.loc[valid, "unit_sales"],
+                                test_df.loc[valid, "sarima_forecast"]
+                            )
+                        )
+
+                        m5, m6 = st.columns(2)
+                        m5.metric("MAE (SARIMA)", f"{mae_sar:.2f}")
+                        m6.metric("RMSE (SARIMA)", f"{rmse_sar:.2f}")
 
         with st.expander("Show forecast table"):
             cols = ["date", "unit_sales", "forecast"]
